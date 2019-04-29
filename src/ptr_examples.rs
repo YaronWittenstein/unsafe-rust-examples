@@ -43,3 +43,18 @@ fn test_ptr_swap() {
     assert_eq!(20, unsafe { std::ptr::read(ptr1) });
     assert_eq!(10, unsafe { std::ptr::read(ptr2) });
 }
+
+#[test]
+fn test_ptr_to_mut_ptr() {
+    let val: u32 = 10;
+
+    let ptr = &val as *const u32;
+
+    let mut_ptr = ptr as *mut u32;
+
+    assert_eq!(10, unsafe { *mut_ptr });
+
+    unsafe { std::ptr::write(mut_ptr, 20) };
+
+    assert_eq!(20, unsafe { *mut_ptr });
+}
