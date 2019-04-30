@@ -1,5 +1,5 @@
 #[test]
-fn test_phantom_data() {
+fn phantom_data() {
     use std::marker::PhantomData;
 
     struct MyStruct<'a, T: 'a> {

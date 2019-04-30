@@ -1,5 +1,5 @@
 #[test]
-fn test_vec_as_ptr() {
+fn vec_as_ptr() {
     let vec: Vec<u8> = vec![10, 20, 30];
 
     let ptr = vec.as_ptr();
@@ -14,7 +14,7 @@ fn test_vec_as_ptr() {
 }
 
 #[test]
-fn test_vec_as_mut_ptr() {
+fn vec_as_mut_ptr() {
     let mut vec: Vec<u8> = vec![10, 20];
 
     let first_ptr: *mut u8 = vec.as_mut_ptr();

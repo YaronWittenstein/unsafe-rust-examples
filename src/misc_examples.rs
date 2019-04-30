@@ -1,5 +1,5 @@
 #[test]
-fn test_unsafe_cell() {
+fn unsafe_cell() {
     use std::cell::UnsafeCell;
 
     let cell = UnsafeCell::new(10);
@@ -8,7 +8,7 @@ fn test_unsafe_cell() {
 }
 
 #[test]
-fn test_unsafe_trait() {
+fn unsafe_trait() {
     unsafe trait DoWork {
         fn do_safe_work(&mut self, x: i32) -> i32;
         unsafe fn do_unsafe_work(&mut self, x: i32) -> i32;

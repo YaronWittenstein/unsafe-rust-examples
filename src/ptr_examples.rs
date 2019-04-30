@@ -1,5 +1,5 @@
 #[test]
-fn test_ptr_read() {
+fn ptr_read() {
     let val: u32 = 10;
     let ptr = &val as *const u32;
 
@@ -7,7 +7,7 @@ fn test_ptr_read() {
 }
 
 #[test]
-fn test_ptr_write() {
+fn ptr_write() {
     let mut val: u32 = 10;
     let ptr = &mut val as *mut u32;
 
@@ -17,7 +17,7 @@ fn test_ptr_write() {
 }
 
 #[test]
-fn test_ptr_replace() {
+fn ptr_replace() {
     let mut val: u32 = 10;
 
     let ptr = &mut val as *mut u32;
@@ -28,7 +28,7 @@ fn test_ptr_replace() {
 }
 
 #[test]
-fn test_ptr_swap() {
+fn ptr_swap() {
     let mut val1: u32 = 10;
     let mut val2: u32 = 20;
 
@@ -45,7 +45,7 @@ fn test_ptr_swap() {
 }
 
 #[test]
-fn test_ptr_to_mut_ptr() {
+fn ptr_to_mut_ptr() {
     let val: u32 = 10;
 
     let ptr = &val as *const u32;
@@ -57,4 +57,15 @@ fn test_ptr_to_mut_ptr() {
     unsafe { std::ptr::write(mut_ptr, 20) };
 
     assert_eq!(20, unsafe { *mut_ptr });
+}
+
+#[test]
+fn c_int_ptr() {
+    use std::os::raw::c_int;
+
+    let val: u32 = 10;
+
+    let int_ptr: *const c_int = &val as *const u32 as *const c_int;
+
+    assert_eq!(10, unsafe { *int_ptr });
 }

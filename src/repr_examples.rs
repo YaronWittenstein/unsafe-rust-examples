@@ -1,5 +1,5 @@
 #[test]
-fn test_repr_rust_struct() {
+fn repr_rust_struct() {
     use std::mem::size_of;
 
     struct MyStructRust {
@@ -13,7 +13,7 @@ fn test_repr_rust_struct() {
     );
 }
 #[test]
-fn test_repr_c_struct() {
+fn repr_c_struct() {
     use std::mem::size_of;
 
     #[repr(C)]

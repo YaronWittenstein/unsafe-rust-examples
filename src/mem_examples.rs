@@ -1,5 +1,5 @@
 #[test]
-fn test_mem_transmute() {
+fn mem_transmute() {
     fn inc_fn(x: u32) -> u32 {
         x + 1
     };
@@ -12,7 +12,7 @@ fn test_mem_transmute() {
 }
 
 #[test]
-fn test_mem_maybe_uninitialized() {
+fn mem_maybe_uninitialized() {
     let mut s: String = unsafe { std::mem::uninitialized() };
 
     unsafe {
